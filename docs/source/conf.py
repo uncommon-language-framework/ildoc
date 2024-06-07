@@ -2,21 +2,17 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'ULR IL'
+copyright = '2024, Carl Furtado'
+author = 'Carl Furtado'
 
-release = '0.1'
-version = '0.1.0'
+release = 'latest'
 
 # -- General configuration
 
 extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
+    'myst_parser',
+    'sphinx_rtd_theme'
 ]
 
 intersphinx_mapping = {

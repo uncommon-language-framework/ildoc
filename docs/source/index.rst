@@ -9,7 +9,7 @@ This documentation covers all UIL opcodes and their operands.
    This project is under active development.
 
 Table Of Contents
---------
+-----------------
 
 .. toctree::
 	introduction
