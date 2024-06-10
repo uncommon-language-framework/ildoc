@@ -12,6 +12,7 @@ Table Of Contents
 -----------------
 
 .. toctree::
+	:maxdepth: 2
 	introduction
 	declarations
 	arithmetic
