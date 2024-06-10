@@ -1,1 +1,1 @@
-# Logical Opcodes
+# Logical Operations

@@ -13,7 +13,9 @@ Table Of Contents
 
 .. toctree::
 	introduction
+	declarations
 	arithmetic
+	bitwise
 	logical
 	object_model
 	control_flow
