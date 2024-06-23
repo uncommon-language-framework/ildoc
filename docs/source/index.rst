@@ -21,5 +21,3 @@ Table Of Contents
 	logical
 	object_model
 	control_flow
-	signals
-
