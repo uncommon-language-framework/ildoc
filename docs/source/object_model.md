@@ -47,15 +47,7 @@ Takes the type name of the type that should be loaded and pushes the desired typ
 
 May never be implemented.
 
-### `box` - Box Value Type
-`box <type_name>`
-
-Pops the last value off of the evaluation stack as a `type_name` and boxes it, pushing the boxed `[System]Object` version to the stack.
-
-### `unbox` - Unbox Value Type
-`unbox <type_name>`
-
-Pops the last value off the evaluation stack as a reference object and unboxes it to recieve an object of `type_name`, pushing the `type_name` instance to the stack.
+## Storing Data
 
 ### `stfld` - Store Field
 `stfld {static|instance} <name>`
@@ -66,6 +58,30 @@ Takes two compile time operands, the first of which can either be `static` or `i
 `stelem <elem_type>`
 
 Takes a compile-time operand of the array element type. Pops the last value off of the evaluation stack, reading it as a 32-bit integer (the array index). Pops the next value to the evaluation stack, assuming it is an array of `elem_type`, e.g. a `elem_type[]`. The array is indexed with the aforementioned integer value and the next value on the evaluation stack is stored at that index location.
+
+### `stloc` - Store Local
+`stloc <num>`
+
+Takes one compile-time operand, which is the number of the local. Local numbers are automatically assigned from 0-255 in the order that local variables were declared in for the function. The last value on the evaluation stack is assumed to be of the correct type corresponding to the local and is popped of the stack to be stored in the specified local variable.
+
+### `stapl` - Store Argument-Passed Local
+`stapl <num>`
+
+Takes one compile-time operand, which is the number of the argument-passed local. Argument-passed local numbers are automatically assigned in the same way as normal local numbers, ranging from 0-255 in the order that the arguments were declared in for the function. The last value on the evaluation stack is assumed to be of the correct type corresponding to the argument-passed local and is popped of the stack to be stored in the specified argument-passed local variable.
+
+## Value Type-Reference Type Interaction
+
+### `box` - Box Value Type
+`box <type_name>`
+
+Pops the last value off of the evaluation stack as a `type_name` and boxes it, pushing the boxed `[System]Object` version to the stack.
+
+### `unbox` - Unbox Value Type
+`unbox <type_name>`
+
+Pops the last value off the evaluation stack as a reference object and unboxes it to recieve an object of `type_name`, pushing the `type_name` instance to the stack.
+
+## Object Construction
 
 ### `new` - Create New Object
 `new <object_type>(<ctor_arg1_type>, <ctor_arg2_type>, ...)`
